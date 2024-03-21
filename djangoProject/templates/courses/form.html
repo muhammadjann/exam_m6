@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create course</title>
+</head>
+<body>
+    <h1 class="mb-6 text-3xl">{{ title }}</h1>
+        <form method="post" action="." enctype="multipart/form-data">
+        {% csrf_token %}
+            
+        {{ form.as_p }}
+       
+       
+     <button class=" mt-6 py-4 px-8 text-lg bg-teal-500 hover:bg-teal-700 rounded-xl tex-white">Submit</button>
+    </form>
+</body>
+</html>

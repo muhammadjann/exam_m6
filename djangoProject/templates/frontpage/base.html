@@ -1,0 +1,167 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title> {% block title %}{% endblock %} | Najot ta'lim</title>
+
+    <link rel="shortcut icon" href="{% static 'assets/images/fav.jpg' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/fontawsom-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/slider/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/slider/css/owl.theme.default.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}" />
+</head>
+
+    <body>
+            <header>
+                <div class="header-top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-7 col-md-12 left-item">
+                                <ul>
+                                    <li><i class="fas fa-envelope-square"></i> https://najottalim.uz/</li>
+                                    <li><i class="fas fa-phone-square"></i> +998788899888</li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-5 d-none d-lg-block right-item">
+                                <ul>
+                                    <li><a><i class="fab fa-github"></i></a></li>
+                                    <li><a><i class="fab fa-google-plus-g"></i></a></li>
+                                    <li><a><i class="fab fa-pinterest-p"></i></a></li>
+                                    <li><a><i class="fab fa-twitter"></i></a></li>
+                                    <li><a><i class="fab fa-facebook-f"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+            
+                    </div>
+                </div>
+                <div id="nav-head" class="header-nav">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-12 nav-img">
+                                <img src="{% static 'assets/images/logo.png'%}" alt="">
+                                <a data-toggle="collapse" data-target="#menu" href="#menu"><i
+                                        class="fas d-block d-md-none small-menu fa-bars"></i></a>
+                            </div>
+                            <div id="menu" class="col-md-9 d-none d-md-block nav-item">
+                                <ul>
+                                    <li><a href="{% url 'index' %}">Home</a></li>
+                                    <li><a href="{% url 'about' %}">About Us</a></li>
+                                    <li><a href="{% url 'courses:courses' %}">Cources</a></li>
+                                    <li><a href="{% url 'blogs:blogs' %}">Blog</a></li>
+                                    <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+            
+                    </div>
+                </div>
+            
+            </header>
+    {% block content %}
+            
+        
+        
+        
+    {% endblock %}
+            
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 about">
+                            <h2>About Us</h2>
+                            <p>Najot ta'lim zamonaviy kasblar maktabi </p>
+            
+                            <div class="foot-address">
+                                <div class="icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="addet">
+                                    Chlonzor district, Tashkent, 9-mavze 1
+                                </div>
+                            </div>
+                            <div class="foot-address">
+                                <div class="icon">
+                                    <i class="far fa-envelope-open"></i>
+                                </div>
+                                <div class="addet">
+                                    najottalimcs@gmail.com
+                                </div>
+                            </div>
+                            <div class="foot-address">
+                                <div class="icon">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <div class="addet">
+                                    +998994121888 <br>
+                                    +998788899888
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 fotblog">
+                            <h2>From latest Blog</h2>
+                            <div class="blohjb">
+                                <p>dignissim. Integer tempor facilisis malesuada. Proin ac varius velit, tincidunt condimentum</p>
+                                <span>22-1-2019</span>
+                            </div>
+                            <div class="blohjb">
+                                <p>dignissim. Integer tempor facilisis malesuada. Proin ac varius velit, tincidunt condimentum</p>
+                                <span>22-1-2019</span>
+                            </div>
+                            <div class="blohjb">
+                                <p>dignissim. Integer tempor facilisis malesuada. Proin ac varius velit, tincidunt condimentum</p>
+                                <span>22-1-2019</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 glink">
+                            <ul>
+                                <li><a href="{% url 'index' %}"><i class="fas fa-angle-double-right"></i>Home</a></li>
+                                <li><a href="{% url 'about' %}"><i class="fas fa-angle-double-right"></i>About Us</a></li>
+                                <li><a href="{% url 'blogs:blogs' %}"><i class="fas fa-angle-double-right"></i>Blog</a></li>
+                                <li><a href="{% url 'contact' %}"><i class="fas fa-angle-double-right"></i>Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3 tags">
+                            <h2>Easy Tags</h2>
+                            <ul>
+                                <li>English</li>
+                                <li>Web Design</li>
+                                <li>Internet Pro</li>
+                                <li>Node Js</li>
+                                <li>Java Swing</li>
+                                <li>Angular Js</li>
+                                <li>Vue Js</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <div class="copy">
+                <div class="container">
+                    <a href="#">2024 &copy; All Rights Reserved | Designed and Developed by
+                       Muhammadjan</a>
+            
+                    <span>
+                            <a><i class="fab fa-github"></i></a>
+                            <a><i class="fab fa-google-plus-g"></i></a>
+                            <a><i class="fab fa-pinterest-p"></i></a>
+                            <a><i class="fab fa-twitter"></i></a>
+                            <a><i class="fab fa-facebook-f"></i></a>
+                    </span>
+                </div>
+            
+            </div>
+    
+    </body>
+    <script src="{% static 'assets/js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/popper.min.js'%}"></script>
+    <script src=" {% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/slider/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/js/script.js' %}"></script>
+</html>

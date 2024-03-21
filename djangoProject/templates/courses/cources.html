@@ -1,0 +1,46 @@
+{% extends 'frontpage/base.html' %}
+{% load static %}
+
+{% block title %} Courses {% endblock %}
+{% block content %}
+    <div class="page-nav no-margin row">
+        <div class="container">
+            <div class="row">
+                <h2>Courses</h2>
+                <ul>
+                    <li> <a href="{% url 'index' %}"><i class="fas fa-home"></i> Home</a></li>
+                    <li><i class="fas fa-angle-double-right"></i> Courses</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+<div class="popular-cources pc2">
+    <div class="container">
+        
+        <div class="row courc-ro">
+           {% for course in courses %}
+                <div class="col-md-4">
+                <div class="courc-card">
+                    <img src="{{ course.image.url }}" alt="">
+                    <div class="cource-det">
+                         <a href="{% url 'courses:detail' course.id %}"> <h6>{{ course.name }}</h6>   </a>
+                        <ul>
+                            <li><i class="fas fa-graduation-cap"></i> {{ course.teacher }}<span>{{ course.type }}</span></li>
+                            <li><i class="far fa-calendar-plus"></i> {{ course.duration }} months</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            {% endfor %}
+            
+        </div>
+    </div>
+</div>
+<a href="{% url 'courses:course_create' %}" class="inline-block mt-6 px-6 py-3 text-lg font-semi-red bg-teal-500 text-white rounded-xl hover:bg-teal-700"> Create Course</a>
+{% endblock %}
+
+  

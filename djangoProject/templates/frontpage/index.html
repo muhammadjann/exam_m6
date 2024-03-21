@@ -1,0 +1,203 @@
+{% extends 'frontpage/base.html'%}
+{% load static %}
+
+{% block title %} {% endblock %}
+{% block content %}
+              <div class="slider">
+        <!-- Set up your HTML -->
+        <div class="owl-carousel ">
+            <div class="slider-img">
+                <div class="item">
+                    <div class="slider-img"><img src="{% static 'assets/images/slider/slider-1.jpg' %}" alt=""></div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-12 col-xs-12">
+                                <div class="slider-captions">
+                                    <h1 class="slider-title">Najot Ta'lim Shool</h1>
+                                    <p class="slider-text hidden-xs">We can help you learn modern profession</p>
+                                    <a href="{% url 'courses:courses' %}" class="btn btn-success hidden-xs">View All Cources</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="slider-img"><img src="{% static 'assets/images/slider/slider-2.jpg' %}" alt=""></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-12 col-xs-12">
+                            <div class="slider-captions">
+                                <h1 class="slider-title"> Graphic Design Course</h1>
+                                <p class="slider-text hidden-xs">Create your own world</p>
+                                <a href="#" class="btn btn-success hidden-xs">Schedule A Visit</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="slider-img"> <img src="{% static 'assets/images/slider/slider-3.jpg' %}" alt=""></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-12 col-xs-12">
+                            <div class="slider-captions">
+                                <h1 class="slider-title">Najot ta'lim Web development course</h1>
+                                <p class="slider-text hidden-xs">start your career aas developer with us</p>
+                                <a href="#" class="btn btn-success hidden-xs">Join Today</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        
+        
+            <!-- ################# Key Features Starts Here#######################--->
+        <div class="key-features">
+            <div class="container">
+                <div class="row key-row no-margin">
+                    {% for category in categories %}
+                        <div class="box c1">
+                       <i class="fas fa-project-diagram"></i>
+                        <p>{{ category.title }}</p>
+                    </div>
+                        <div class="box c2">
+                         <i class="fas fa-space-shuttle"></i>
+                        <p>{{ category.title }}</p>
+                    </div>
+                    {% endfor %}
+    
+      
+                </div>
+            </div>
+        </div>
+        
+    <!-- ################# popular Cources Starts Here#######################--->
+    <div class="popular-cources">
+        <div class="container">
+            <div class="session-title row">
+                <h2>Our Instructors</h2>
+            </div>
+            <div class="row courc-ro">
+                {% for course in courses %}
+                    <div class="col-md-4">
+                    <div class="courc-card">
+                      <a href="{% url 'courses:detail' course.id %}" > <img src="{{ course.image.url }}" alt=""></a>
+                        <div class="cource-det">
+                            <h6>{{ course.name }}</h6>
+                            <ul>
+                                <li><i class="fas fa-graduation-cap"></i>{{ course.teacher }}<span>{{ course.type }}</span></li>
+                                <li><i class="far fa-calendar-plus"></i>{{ course.duration }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>  
+    
+    
+    
+   <div class="doctor-message">
+        <div class="inner-lay">
+            <div class="container">
+               <div class="row session-title">
+                   <h2>Najot Ta'lim raqamlarda</h2>
+                   <p></p>
+               </div>
+                <div class="row">
+                    <div class="col-sm-3 numb">
+                        <h3>13+</h3>
+                        <span>YEARS OF EXPEREANCE</span>
+                    </div>
+                    <div class="col-sm-3 numb">
+                        <h3>10+</h3>
+                        <span>Cources</span>
+                    </div>
+                    <div class="col-sm-3 numb">
+                        <h3>52+</h3>
+                        <span>QUALIFIED STUFF</span>
+                    </div>
+                    <div class="col-sm-3 numb">
+                        <h3>10</h3>
+                        <span>MASTER CERTIFICATIONS</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>  
+    
+    <!-- ################# Our Instructors Starts Here#######################--->    
+
+<div class="our-instructor">
+    <div class="container">
+         <div class="session-title row">
+            <h2>Our Instructors</h2>
+        </div>
+        <div class="instruct-row row">
+            {% for teacher in teachers %}
+                <div class="col-md-3">
+                <div class="instruct-card">
+                    <img src="{{ teacher.image.url }}" alt="">
+                    <a href="{% url 'courses:teacher_detail' teacher.id%}"> <h6>{{ teacher.first_name }} {{ teacher.last_name }}</h6></a>
+                <p>{{ teacher.category }}</p>
+                
+                <ul>
+                    <li><i class="fab fa-facebook-f"></i></li>
+                    <li><i class="fab fa-twitter"></i></li>
+                    <li><i class="fab fa-linkedin-in"></i></li>
+                    <li><i class="fab fa-pinterest-p"></i></li>
+                </ul>
+                </div>
+            </div>
+            {% endfor %}             
+        </div>
+    </div>
+</div>     
+       
+    <div class="our-blog">
+        <div class="container">
+             <div class="session-title row">
+                <h2>Our Blog</h2>
+            </div>
+            
+            <div class="row-blog row">
+                <div class="col-md-10 vbf mx-auto">
+                    {% for blog in blogs %}
+                        <div class="blog-card row">
+                    
+                            <div class="col-2">
+                               <div class="date-box">
+                                   {{ blog.date }}
+                               </div>
+                               
+                            </div>
+                            <div class="col-7 setv">
+                                
+                                <a href="{% url 'blogs:event' blog.id %}"><h4>{{ blog.title }}</h4></a>
+                                <ul>
+                                    <li>{{ blog.duration }}</li>
+                                    <li>{{ blog.location }}</li>
+                                </ul>
+                            </div>
+                            <div class="col-3 img-cv">
+                                <img src="{{ blog.image.url }}" alt="">
+                            </div>
+                        </div>
+                     {% endfor %}
+                        
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+                  

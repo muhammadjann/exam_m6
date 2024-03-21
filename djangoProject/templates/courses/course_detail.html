@@ -1,0 +1,39 @@
+{% extends 'frontpage/base.html' %}
+{% block title %}{{ course.name }}{% endblock %}
+
+{% block content %}
+       <div class="page-nav no-margin row">
+        <div class="container">
+            <div class="row">
+                <h2>About Najot Ta'lim School</h2>
+                <ul>
+                    <li> <a href="{% url 'index' %}"><i class="fas fa-home"></i> Home</a></li>
+                    <li><i class="fas fa-angle-double-right"></i> {{ course.name }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="popular-cources pc2">
+    <div class="container">
+        
+        <div class="row courc-ro">
+                <div class="col-md-4">
+                <div class="courc-card">
+                    <img src="{{ course.image.url }}" alt="">
+                    <div class="cource-det">
+                        <h6>{{ course.name }}</h6>
+                        <ul>
+                            <li><i class="fas fa-graduation-cap"></i> {{ course.teacher }}<span>{{ course.type }}</span></li>
+                            <li><i class="far fa-calendar-plus"></i> {{ course.duration }} months</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+<a href="{% url 'courses:edit' course.id %}" class="inline-block mt-6 px-6 py-3 text-lg font-semi-bold bg-teal-500 text-white rounded-xl">Update</a>
+<a href="{% url 'courses:delete' course.id %}" class="inline-block mt-6 px-6 py-3 text-lg font-semi-bold bg-red-500 text-white rounded-xl">Delete</a>
+{% endblock %}

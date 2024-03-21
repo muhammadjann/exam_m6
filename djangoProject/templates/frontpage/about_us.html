@@ -1,0 +1,103 @@
+{% extends 'frontpage/base.html' %}
+{% load static %}
+
+{% block title %}{% endblock %}
+{% block content %}
+    <!--  ************************* Page Title Starts Here ************************** -->
+    <div class="page-nav no-margin row">
+        <div class="container">
+            <div class="row">
+                <h2>About Najot Ta'lim School</h2>
+                <ul>
+                    <li> <a href="{% url 'index' %}"><i class="fas fa-home"></i> Home</a></li>
+                    <li><i class="fas fa-angle-double-right"></i> About Us</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ######## Page  Title End ####### -->
+
+    <section class="with-medical">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <img src="{% static 'assets/images/why.jpg' %}" alt="">
+                </div>
+                <div class="col-lg-6 col-md-12 txtr">
+                    <h4>Why you should choose <br>
+                        <span>Najot Ta'lim</span>
+                    </h4>
+                    <p>2022-yildan buyon bitiruvchilarimiz ishga joylashish statistikasini berib kelmoqdamiz</p>
+                    <p> Ushbu statistikalar va ta'lim sohasidagi 5 yillik tajribadan kelib chiqqan Holda <strong>Najot ta'lim</strong> kurslarini muvaffqiyatli tamomlagan o'quvchilariga <strong>100% ish o'rinlarini taklif qilish</strong>  kafolatini beradi</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+   
+     <!-- ################# University Number Starts Here#######################--->
+
+
+    <div class="doctor-message">
+        <div class="inner-lay">
+            <div class="container">
+               <div class="row session-title">
+                   <h2>Najot Ta'lim raqamlarda</h2>
+                   <p></p>
+               </div>
+                <div class="row">
+                    <div class="col-sm-3 numb">
+                        <h3>13+</h3>
+                        <span>YEARS OF EXPEREANCE</span>
+                    </div>
+                    <div class="col-sm-3 numb">
+                        <h3>10+</h3>
+                        <span>Cources</span>
+                    </div>
+                    <div class="col-sm-3 numb">
+                        <h3>52+</h3>
+                        <span>QUALIFIED STUFF</span>
+                    </div>
+                    <div class="col-sm-3 numb">
+                        <h3>10</h3>
+                        <span>MASTER CERTIFICATIONS</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>  
+    
+    <!-- ################# Our Instructors Starts Here#######################--->    
+
+<div class="our-instructor">
+    <div class="container">
+         <div class="session-title row">
+            <h2>Our Instructors</h2>
+        </div>
+        <div class="instruct-row row">
+            {% for teacher in teachers %}
+                <div class="col-md-3">
+                <div class="instruct-card">
+                    <img src="{{ teacher.image.url }}" alt="">
+                 <a href="{% url 'courses:teacher_detail' teacher.id%}" ><h6>{{ teacher.first_name }}  {{ teacher.last_name }}</h6></a>
+                <p>{{ teacher.category }}</p>
+                
+                <ul>
+                    <li><i class="fab fa-facebook-f"></i></li>
+                    <li><i class="fab fa-twitter"></i></li>
+                    <li><i class="fab fa-linkedin-in"></i></li>
+                    <li><i class="fab fa-pinterest-p"></i></li>
+                </ul>
+                </div>
+            </div>
+            {% endfor %}             
+        </div>
+    </div>
+</div>
+    <a href="{% url 'courses:teacher_create'%}" class="inline-block mt-6 px-6 py-3 text-lg font-semi-red bg-teal-500 text-white rounded-xl hover:bg-teal-700"> Create Teacher</a>
+
+{% endblock %}

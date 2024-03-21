@@ -1,0 +1,41 @@
+{% extends 'frontpage/base.html' %}
+{% block title %}{{ teacher.name }}{% endblock %}
+
+{% block content %}
+       <div class="page-nav no-margin row">
+        <div class="container">
+            <div class="row">
+                <h2>About Najot Ta'lim School</h2>
+                <ul>
+                    <li> <a href="{% url 'index' %}"><i class="fas fa-home"></i> Home</a></li>
+                    <li><i class="fas fa-angle-double-right"></i> {{ course.name }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="our-instructor">
+    <div class="container">
+         <div class="session-title row">
+            <h2>Our Instructors</h2>
+        </div>
+        <div class="instruct-row row">
+                <div class="col-md-3">
+                <div class="instruct-card">
+                    <img src="{{ teacher.image.url }}" alt="">
+                    <a href="{% url 'courses:teacher_detail' teacher.id%}" ><h6>{{ teacher.first_name }}  {{ teacher.last_name }}</h6></a>
+                <p>{{ teacher.category }}</p>
+                
+                <ul>
+                    <li><i class="fab fa-facebook-f"></i></li>
+                    <li><i class="fab fa-twitter"></i></li>
+                    <li><i class="fab fa-linkedin-in"></i></li>
+                    <li><i class="fab fa-pinterest-p"></i></li>
+                </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<a href="{% url 'courses:teacher_edit' teacher.id %}" class="inline-block mt-6 px-6 py-3 text-lg font-semi-bold bg-teal-500 text-white rounded-xl">Update</a>
+<a href="{% url 'courses:teacher_delete' teacher.id%}" class="inline-block mt-6 px-6 py-3 text-lg font-semi-bold bg-red-500 text-white rounded-xl">Delete</a>
+{% endblock %}
