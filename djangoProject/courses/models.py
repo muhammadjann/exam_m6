@@ -58,7 +58,6 @@ class Teacher(AbstractBaseModel):
 
     first_name = models.CharField(max_length=28)
     last_name = models.CharField(max_length=28)
-    category = models.ManyToManyField('Category', related_name="teacher")
     degree = models.CharField(max_length=9, choices=Degree)
     image = models.ImageField(upload_to="teachers/", null=True)
     age = models.IntegerField()

@@ -147,7 +147,7 @@
                 <div class="instruct-card">
                     <img src="{{ teacher.image.url }}" alt="">
                     <a href="{% url 'courses:teacher_detail' teacher.id%}"> <h6>{{ teacher.first_name }} {{ teacher.last_name }}</h6></a>
-                <p>{{ teacher.category }}</p>
+                       <p>{{teacher.degree}}</p>
                 
                 <ul>
                     <li><i class="fab fa-facebook-f"></i></li>

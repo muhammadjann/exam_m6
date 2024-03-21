@@ -17,4 +17,4 @@ class EditCourseForm(forms.ModelForm):
 class TeacherForm(forms.ModelForm):
     class Meta:
         model = Teacher
-        fields = ['first_name', 'last_name', 'age', 'degree', 'category', 'email', 'image',]
+        fields = ['first_name', 'last_name', 'age', 'degree', 'email', 'image',]
